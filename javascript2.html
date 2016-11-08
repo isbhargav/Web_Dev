@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.b {
+	position: absolute;
+	top: 50%;
+	left:50%;
+	
+}
+</style>
+</head>
+<body >
+
+
+
+<button type="button" class="b" onclick="setflag()" >
+<span id="myspan">
+Pause
+</span>
+</button>
+
+<script>
+var flag=1;
+var myVar = setInterval(function () { myFunction() }, 500);
+function myFunction() {
+	
+		document.body.style.backgroundColor = getrandom();
+    	
+    
+}
+function getrandom()
+{
+    var n='0123456789ABCDEF';
+	var c='#';
+	for(var i=0;i<6;i++)
+	{
+		c+=n[Math.floor(Math.random()*16)];
+	}
+	return c;
+}
+function setflag()
+{
+	if(flag==1)
+	{	
+		clearInterval(myVar);
+		flag=0;
+		document.getElementById("myspan").textContent="Play";
+	}
+	else
+	{
+
+		myVar = setInterval(function () { myFunction() }, 500);
+		flag=1;
+		document.getElementById("myspan").textContent="Pause";
+	}
+	
+}
+</script>
+
+</body>
+</html>
+

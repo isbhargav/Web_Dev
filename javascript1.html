@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.b {
+	position: absolute;
+	top: 50%;
+	left:50%;
+}
+</style>
+</head>
+<body>
+
+
+
+<button type="button" class="b" onclick="myFunction()">Change</button>
+
+<script>
+var flag=1;
+function myFunction() {
+    document.body.style.backgroundColor = getrandom();
+    myFunction();
+}
+function getrandom()
+{
+    var n='0123456789ABCDEF';
+	var c='#';
+	for(var i=0;i<6;i++)
+	{
+		c+=n[Math.floor(Math.random()*16)];
+	}
+	return c;
+}
+</script>
+
+</body>
+</html>
+
